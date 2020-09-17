@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FontSizeSetting">
+        <attr name="font22" format="dimension"/>
+        <attr name="font20" format="dimension"/>
+        <attr name="font18" format="dimension"/>
+        <attr name="font16" format="dimension"/>
+        <attr name="font14" format="dimension"/>
+        <attr name="font13" format="dimension"/>
+        <attr name="font12" format="dimension"/>
+        <attr name="font11" format="dimension"/>
+        <attr name="font10" format="dimension"/>
+        <attr name="font8" format="dimension"/>
+    </declare-styleable>
+
+</resources>

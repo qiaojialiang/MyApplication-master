@@ -1,0 +1,103 @@
+Index: app/src/main/java/com/example/myapplication/kt/KtDemoActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/myapplication/kt/KtDemoActivity.kt	(revision 6ffa53c3bb1afb5301cd945de47f4f93cd563f35)
++++ app/src/main/java/com/example/myapplication/kt/KtDemoActivity.kt	(date 1598423971775)
+@@ -17,7 +17,6 @@
+     @BindView(R.id.text123)
+     internal var textView: TextView? = null
+ 
+-
+     private var recyclerView: RecyclerView? = null
+     //private String a="a";
+     private var a: String = "a"
+@@ -31,7 +30,6 @@
+ 
+     override fun initView(view: View) {
+         textView!!.setOnClickListener { showToast("123") }
+-
+     }
+ 
+     override fun onClick(v: View?) {
+Index: app/src/main/java/com/example/myapplication/bean/NumBody.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/myapplication/bean/NumBody.java	(revision 6ffa53c3bb1afb5301cd945de47f4f93cd563f35)
++++ app/src/main/java/com/example/myapplication/bean/NumBody.java	(date 1598422120891)
+@@ -7,7 +7,6 @@
+ public class NumBody {
+ 
+    private String  num;
+-   //13
+ 
+     public String getNum() {
+         return num;
+Index: app/src/main/java/com/example/myapplication/adapter/PriceAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/myapplication/adapter/PriceAdapter.java	(revision 6ffa53c3bb1afb5301cd945de47f4f93cd563f35)
++++ app/src/main/java/com/example/myapplication/adapter/PriceAdapter.java	(date 1598495580850)
+@@ -21,5 +21,6 @@
+     @Override
+     protected void convert(BaseViewHolder helper, PriceBean item) {
+         helper.setText(R.id.item_price, "分类" + item.getPrice() + "");
++        helper.addOnClickListener(R.id.item_price);
+     }
+ }
+Index: app/src/main/java/com/example/myapplication/activity/view/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/myapplication/activity/view/MainActivity.java	(revision 6ffa53c3bb1afb5301cd945de47f4f93cd563f35)
++++ app/src/main/java/com/example/myapplication/activity/view/MainActivity.java	(date 1598495653658)
+@@ -4,15 +4,16 @@
+ import android.view.View;
+ 
+ import androidx.recyclerview.widget.GridLayoutManager;
+-import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+ 
++import com.chad.library.adapter.base.BaseQuickAdapter;
+ import com.example.myapplication.R;
+ import com.example.myapplication.activity.presenter.MainContract;
+ import com.example.myapplication.activity.presenter.MainPresenter;
+ import com.example.myapplication.adapter.PriceAdapter;
+ import com.example.myapplication.base.BaseMvpActivity;
+ import com.example.myapplication.bean.PriceBean;
++import com.example.myapplication.kt.KtDemoActivity;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
+@@ -24,7 +25,7 @@
+     RecyclerView mRecycle;
+     private List<PriceBean> priceBeans = new ArrayList<>();
+     private PriceAdapter mAdapter;
+-    View heardView, footView;
++    private View heardView, footView;
+ 
+     @Override
+     public void onPriceSuccess(List<PriceBean> s) {
+@@ -55,6 +56,16 @@
+         mAdapter.addFooterView(footView);
+         mRecycle.setLayoutManager(new GridLayoutManager(this, 5));
+         mRecycle.setAdapter(mAdapter);
++        mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
++            @Override
++            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
++                if (view.getId() == R.id.item_price) {
++                    if (position == 0) {
++                        KtDemoActivity.Companion.start(MainActivity.this);
++                    }
++                }
++            }
++        });
+         //IndicatorView qyIndicator = new IndicatorView(this)
+         //        .setIndicatorColor(Color.DKGRAY)
+         //        .setIndicatorSelectorColor(Color.WHITE);
