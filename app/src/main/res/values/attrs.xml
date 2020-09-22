@@ -14,4 +14,13 @@
         <attr name="font8" format="dimension"/>
     </declare-styleable>
 
+
+    <declare-styleable name="QQStepView">
+        <attr name="outerColor" format="color"/>
+        <attr name="innerColor" format="color"/>
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="stepViewTextSize" format="dimension"/>
+        <attr name="stepViewTextColor" format="color"/>
+    </declare-styleable>
+
 </resources>

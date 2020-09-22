@@ -63,6 +63,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         Button btn5 = footView.findViewById(R.id.btn5);
         Button btn6 = footView.findViewById(R.id.btn6);
         Button btn7 = footView.findViewById(R.id.btn7);
+        Button btn8=footView.findViewById(R.id.btn8);
         btn7.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -70,6 +71,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
+        btn8.setOnClickListener(this);
         mRecycle.setLayoutManager(new GridLayoutManager(this, 5));
         mRecycle.setAdapter(mAdapter);
     }
@@ -119,6 +121,10 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
                 break;
             case R.id.btn7:
                 CarActivity.start(MainActivity.this);
+                break;
+                //qq运动
+            case R.id.btn8:
+                QQStepViewActivity.start(MainActivity.this);
                 break;
 
         }

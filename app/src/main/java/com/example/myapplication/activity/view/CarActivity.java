@@ -14,7 +14,6 @@ import java.util.List;
 
 public class CarActivity extends BaseMvpActivity<CarPresenter> implements CarContract.CarView {
 
-
     public static void start(Context context) {
         Intent intent = new Intent(context, CarActivity.class);
         context.startActivity(intent);
@@ -42,7 +41,7 @@ public class CarActivity extends BaseMvpActivity<CarPresenter> implements CarCon
 
     @Override
     protected void getData() {
-             mPresenter.getCarList(AppConstants.appKey);
+        mPresenter.getCarList(AppConstants.appKey);
     }
 
     @Override

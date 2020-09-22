@@ -38,7 +38,6 @@ public interface ApiService {
     @Headers({"Content-Type: application/json"})
     @POST("aqi/query?")
     Observable<BaseModelNew<List<WeatherBean>>> getWeather(@Body WeatherBody body);
-
     @GET("aqi/query?")
     Observable<BaseModelNew<WeatherBean>> getWeatherGet(@Query("appkey") String appkey,@Query("city") String city);
     @GET("car/brand")

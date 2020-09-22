@@ -55,7 +55,7 @@
         <activity android:name=".activity.view.AnimatorActivity" />
         <activity android:name=".activity.view.WeatherActivity"/>
         <activity android:name=".activity.view.CarActivity"/>
-
+        <activity android:name=".activity.view.QQStepViewActivity"/>
         <meta-data
             android:name="com.app.chanel"
             android:value="${channel}" />

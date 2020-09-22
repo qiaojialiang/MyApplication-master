@@ -44,8 +44,8 @@ public class DemoActivity extends AppCompatActivity {
             list_Title.add("选项卡" + i + "");
         }
         mTabLayout.setTabMode(MODE_SCROLLABLE);//设置可滑动
-        mViewPager.setAdapter(new MyPagetAdapter1(getSupportFragmentManager(), DemoActivity.this, fragmentList, list_Title));
-        mTabLayout.setupWithViewPager(mViewPager);
+       // mViewPager.setAdapter(new MyPagetAdapter1(getSupportFragmentManager(), DemoActivity.this, fragmentList, list_Title));
+       // mTabLayout.setupWithViewPager(mViewPager);
     }
 
 

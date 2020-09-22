@@ -6,4 +6,5 @@
 
     <color name="baseColor">#FFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="blue">#6600cc</color>
 </resources>
