@@ -2,7 +2,7 @@ package com.example.myapplication.activity.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

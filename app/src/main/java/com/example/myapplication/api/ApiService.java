@@ -2,13 +2,16 @@ package com.example.myapplication.api;
 
 import com.example.myapplication.base.BaseModelNew;
 import com.example.myapplication.bean.CarBean;
+import com.example.myapplication.bean.PostJsonBean;
 import com.example.myapplication.bean.WeatherBean;
 import com.example.myapplication.body.WeatherBody;
 
 import java.util.List;
 
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -42,4 +45,11 @@ public interface ApiService {
     Observable<BaseModelNew<WeatherBean>> getWeatherGet(@Query("appkey") String appkey,@Query("city") String city);
     @GET("car/brand")
     Observable<BaseModelNew<List<CarBean>>> getCarList(@Query("appkey") String appkey);
+
+    @Headers({"Content-Type: application/json"})
+    @POST("getCaseList.do?")
+    Call<PostJsonBean> addReviews(@Query("deviceid") String deviceid,
+                                  @Query("starttime") String starttime,
+                                  @Query("endtime") String endtime);
+
 }
