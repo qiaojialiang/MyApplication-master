@@ -3,6 +3,7 @@ package com.example.myapplication.activity.view;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
@@ -24,6 +25,7 @@ import butterknife.OnClick;
  * Created on 2020/9/9
  * 动画
  **/
+@SuppressLint("NonConstantResourceId")
 public class AnimatorActivity extends BaseNewActivity {
 
     @BindView(R.id.btn_alpha)

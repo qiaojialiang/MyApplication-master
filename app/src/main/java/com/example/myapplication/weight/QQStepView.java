@@ -13,7 +13,7 @@ import android.view.View;
 
 import com.example.myapplication.R;
 
-public class QQStepView  extends View {
+public class QQStepView extends View {
 
     private int mOuterColor = Color.GRAY;
     private int mInnerColor = Color.RED;
@@ -26,6 +26,7 @@ public class QQStepView  extends View {
     private int mCurrentStep;//当前的数值
     private Paint mInnerPaint;
     private Paint mTextPaint;
+
     public QQStepView(Context context) {
         this(context, null);
 
@@ -101,6 +102,7 @@ public class QQStepView  extends View {
         int baseLine = getHeight() / 2 + dy;
         canvas.drawText(stepText, dx, baseLine, mTextPaint);
     }
+
     //其他，动画效果等
     public synchronized void setStepMax(int stepMax) {
         this.mStepMax = stepMax;

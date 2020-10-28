@@ -21,6 +21,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
+@SuppressLint("NonConstantResourceId")
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.MainView, View.OnClickListener {
     @BindView(R.id.main_recycle)
     RecyclerView mRecycle;
@@ -63,7 +64,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         Button btn5 = footView.findViewById(R.id.btn5);
         Button btn6 = footView.findViewById(R.id.btn6);
         Button btn7 = footView.findViewById(R.id.btn7);
-        Button btn8=footView.findViewById(R.id.btn8);
+        Button btn8 = footView.findViewById(R.id.btn8);
         btn7.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -91,6 +92,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     public void onProgress(long totalSize, long downSize) {
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -122,7 +124,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             case R.id.btn7:
                 CarActivity.start(MainActivity.this);
                 break;
-                //qq运动
+            //qq运动
             case R.id.btn8:
                 QQStepViewActivity.start(MainActivity.this);
                 break;
