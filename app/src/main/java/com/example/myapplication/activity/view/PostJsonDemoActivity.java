@@ -1,8 +1,6 @@
 package com.example.myapplication.activity.view;
 
 import android.util.Log;
-import android.widget.TextView;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,10 +31,9 @@ import okhttp3.Response;
 public class PostJsonDemoActivity extends BaseActivity {
     private List<HistoryBean> historyBeans = new ArrayList<>();
     private List<WeatherListBean> weatherListBeans = new ArrayList<>();
-    HttpUtils httpUtils;
     private WeatherAdapterNew weatherAdapterNew;
     private RecyclerView mRecycle;
-
+    private HttpUtils httpUtils;
     @Override
     protected int setLayoutResourceID() {
         return R.layout.activity_post_json_demo;
@@ -45,8 +42,8 @@ public class PostJsonDemoActivity extends BaseActivity {
     @Override
     protected void initData() {
         //getWeather();
+        httpUtils=new HttpUtils();
         mRecycle = findViewById(R.id.recyclerView);
-        httpUtils = new HttpUtils();
         weatherAdapterNew = new WeatherAdapterNew(R.layout.item_layout, weatherListBeans);
         mRecycle.setLayoutManager(new LinearLayoutManager(this));
         mRecycle.setAdapter(weatherAdapterNew);

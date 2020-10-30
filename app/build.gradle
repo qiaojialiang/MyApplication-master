@@ -211,6 +211,9 @@ dependencies {
 
     //fastJson解析json
     implementation 'com.alibaba:fastjson:1.1.60.android'
+
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }
 //使用maven仓库，android有两个标准的library文件服务器，一个jcenter一个maven,两者毫无关系
 //jcenter有的maven可能没有，反之亦然

@@ -25,6 +25,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.myapplication.R;
 import com.example.myapplication.utils.ActivityManager;
 import com.example.myapplication.utils.CustomDialog;
+import com.example.myapplication.utils.HttpUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -32,7 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-
+@SuppressLint("NonConstantResourceId")
 public abstract class BaseActivity extends AppCompatActivity {
     protected Unbinder mUnbinderr;
     @BindView(R.id.activity_base_toolBar)
@@ -60,7 +61,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected View mLoading;//loading
     private WeakReference<Activity> weakReference = null;
     private CustomDialog mProgressDialog;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

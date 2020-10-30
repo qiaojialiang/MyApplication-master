@@ -13,9 +13,8 @@ import com.example.myapplication.weight.QQStepView;
 
 public class QQStepViewActivity extends BaseActivity {
     private QQStepView qqStepView;
-    private Button start;
 
-     public static void start(Context context){
+    public static void start(Context context){
          Intent intent=new Intent(context,QQStepViewActivity.class);
          context.startActivity(intent);
      }
@@ -28,7 +27,7 @@ public class QQStepViewActivity extends BaseActivity {
     @Override
     protected void initData() {
         qqStepView=findViewById(R.id.step_view);
-        start=findViewById(R.id.start);
+        Button start = findViewById(R.id.start);
         qqStepView.setStepMax(10000);
         final ValueAnimator valueAnimator = ObjectAnimator.ofFloat(0, 9000);
         valueAnimator.setDuration(3000);

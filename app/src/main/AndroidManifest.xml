@@ -53,12 +53,16 @@
         <activity android:name=".activity.view.WeatherActivity"/>
         <activity android:name=".activity.view.CarActivity"/>
         <activity android:name=".activity.view.QQStepViewActivity"/>
-        <activity android:name=".activity.view.PostJsonDemoActivity">
+        <activity android:name=".activity.view.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.view.PostJsonDemoActivity">
+
+        </activity>
+
         <meta-data
             android:name="com.app.chanel"
             android:value="${channel}" />
