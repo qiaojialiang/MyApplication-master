@@ -50,22 +50,26 @@
         <activity android:name=".activity.view.AsyncTaskActivity" />
         <activity android:name=".activity.view.SideBarActivity" />
         <activity android:name=".activity.view.AnimatorActivity" />
-        <activity android:name=".activity.view.WeatherActivity"/>
-        <activity android:name=".activity.view.CarActivity"/>
-        <activity android:name=".activity.view.QQStepViewActivity"/>
-        <activity android:name=".activity.view.NewsActivity">
+        <activity android:name=".activity.view.WeatherActivity" />
+        <activity android:name=".activity.view.CarActivity" />
+        <activity android:name=".activity.view.QQStepViewActivity" />
+        <activity android:name=".activity.view.NewsActivity" />
+        <activity android:name=".activity.view.ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.view.PostJsonDemoActivity">
-
-        </activity>
+        <activity android:name=".activity.view.PostJsonDemoActivity" />
 
         <meta-data
             android:name="com.app.chanel"
             android:value="${channel}" />
+
+        <service
+            android:name=".service.TimerService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
