@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.AppConstants;
@@ -33,20 +34,20 @@ public class NewsFragment extends Fragment {
     @Override
     public void onStart() {
         intiView();
-        getUtils("头条");
+        getUtils();
         super.onStart();
     }
 
     private void intiView() {
         httpUtils = new HttpUtils();
         recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-
-    private void getUtils(String channel) {
+    private void getUtils() {
         FormBody.Builder formBody = new FormBody.Builder();
         formBody.add("appkey", AppConstants.appKey);
-        formBody.add("channel", channel);
+        formBody.add("channel", "头条");
         formBody.add("num", "10");
         formBody.add("start", "0");
         httpUtils.getPost(AppConstants.BASE_NEWS_URL, 0, formBody);

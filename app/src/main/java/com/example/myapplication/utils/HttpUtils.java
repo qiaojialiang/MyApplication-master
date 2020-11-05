@@ -6,6 +6,8 @@ import android.os.Message;
 
 import androidx.annotation.NonNull;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -26,7 +28,8 @@ public class HttpUtils {
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                assert response.body() != null;
                 message.obj = response.body().string();
                 message.arg1 = flag;
                 message.what = 100;
@@ -34,7 +37,7 @@ public class HttpUtils {
             }
 
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 message.what = 500;
                 message.obj = e;
                 handler.sendMessage(message);

@@ -1,10 +1,5 @@
 package com.example.myapplication.activity.view;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -12,10 +7,12 @@ import com.androidkun.xtablayout.XTabLayout;
 import com.example.myapplication.R;
 import com.example.myapplication.adapter.MyPagetAdapter1;
 import com.example.myapplication.base.BaseActivity;
-import com.example.myapplication.bean.EvenBean;
 
-import org.greenrobot.eventbus.EventBus;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,5 +44,29 @@ public class NewsActivity extends BaseActivity {
         }
         mViewPager.setAdapter(new MyPagetAdapter1(getSupportFragmentManager(), NewsActivity.this, fragmentList, stringList));
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+
+    public void getString() throws IOException {
+        InputStream inputStream = getAssets().open("json.txt");
+        InputStreamReader inputStreamReader = null;
+        try {
+            inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+        } catch (UnsupportedEncodingException e1) {
+            e1.printStackTrace();
+        }
+        BufferedReader reader = new BufferedReader(inputStreamReader);
+        StringBuffer sb = new StringBuffer("");
+        String line;
+        try {
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+                sb.append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+//            content = sb.toString();
+        }
     }
 }

@@ -43,7 +43,8 @@ public class ApiRetrofit {
             Log.e(TAG, "| " + request.toString() + request.headers().toString());
             Log.e(TAG, "| Response:" + content);
             Log.e(TAG, "----------Request End:" + duration + "毫秒----------");
-            return response.newBuilder()
+            return response
+                    .newBuilder()
                     .body(ResponseBody.create(mediaType, content))
                     .build();
         }
@@ -52,7 +53,7 @@ public class ApiRetrofit {
     public ApiRetrofit() {
         client = new OkHttpClient.Builder()
                 //添加log拦截器
-                // .addInterceptor(interceptor).addInterceptor(new TokenInterceptor())
+                //.addInterceptor(interceptor).addInterceptor(new TokenInterceptor())
                 .connectTimeout(20, TimeUnit.SECONDS)
                 .readTimeout(20, TimeUnit.SECONDS)
                 .build();
