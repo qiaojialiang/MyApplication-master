@@ -39,7 +39,6 @@ class JspActivity : BaseKtActivity() {
         * */
         mTabLayout.addOnTabSelectedListener(object : XTabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: XTabLayout.Tab) {
-                Log.e("数据1", tab.tag!!.toString() + "")
             }
 
             override fun onTabUnselected(tab: XTabLayout.Tab) {

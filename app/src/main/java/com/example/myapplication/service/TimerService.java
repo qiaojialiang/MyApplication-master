@@ -13,12 +13,10 @@ public class TimerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e("数据1", "onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.e("数据1", "onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -30,8 +28,16 @@ public class TimerService extends Service {
 
     @Override
     public void onDestroy() {
-        Log.e("数据1", "onDestroy");
         super.onDestroy();
     }
+
+    private int count = 0;
+
+    private Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            count++;
+        }
+    };
 
 }

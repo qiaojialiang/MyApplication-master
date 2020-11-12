@@ -22,6 +22,7 @@ public abstract class BaseNewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(initLayout());
         ButterKnife.bind(this);
         initView();

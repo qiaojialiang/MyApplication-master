@@ -65,6 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_base);
         ll = findViewById(R.id.swipe_base_layout);
         View realLayout = LayoutInflater.from(this).inflate(setLayoutResourceID(), null, false);

@@ -37,7 +37,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
         <activity android:name=".activity.view.MainActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".activity.view.GetPostDemoActivity" />
         <activity android:name=".kt.view.KtDemoActivity" />
@@ -54,11 +57,13 @@
         <activity android:name=".activity.view.CarActivity" />
         <activity android:name=".activity.view.QQStepViewActivity" />
         <activity android:name=".activity.view.NewsActivity" />
-        <activity android:name=".activity.view.ServiceActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".activity.view.DaiLogActivity"/>
+        <!--orientation|keyboardHidden-->
+        <activity
+            android:name=".activity.view.ServiceActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor">
+
         </activity>
         <activity android:name=".activity.view.PostJsonDemoActivity" />
 

@@ -28,7 +28,6 @@ public class BaseResponseBodyConverter<T> implements Converter<ResponseBody, T> 
     @Override
     public T convert(ResponseBody value) throws IOException {
         String jsonString = value.string();
-        Log.e("数据1",jsonString+"");
         try {
 //            JSONObject object = new JSONObject(jsonString);
 //            String ret = object.getString("ret");
