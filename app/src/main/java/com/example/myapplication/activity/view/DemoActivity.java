@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication.R;
-import com.example.myapplication.adapter.MyPagetAdapter1;
 import com.example.myapplication.fragment.TabLayoutFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
@@ -44,8 +43,8 @@ public class DemoActivity extends AppCompatActivity {
             list_Title.add("选项卡" + i + "");
         }
         mTabLayout.setTabMode(MODE_SCROLLABLE);//设置可滑动
-       // mViewPager.setAdapter(new MyPagetAdapter1(getSupportFragmentManager(), DemoActivity.this, fragmentList, list_Title));
-       // mTabLayout.setupWithViewPager(mViewPager);
+        // mViewPager.setAdapter(new MyPagetAdapter1(getSupportFragmentManager(), DemoActivity.this, fragmentList, list_Title));
+        // mTabLayout.setupWithViewPager(mViewPager);
     }
 
 

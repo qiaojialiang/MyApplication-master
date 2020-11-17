@@ -22,7 +22,6 @@ import butterknife.BindView;
 
 public class WeatherActivity extends BaseMvpActivity<WeatherPresenter>  implements WeatherContract.WeatherView {
 
-
     @BindView(R.id.recyclerView_weather)
     RecyclerView mRecycleView;
     private WeatherAdapter mAdapter;

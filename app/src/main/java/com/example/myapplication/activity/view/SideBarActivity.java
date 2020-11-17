@@ -1,5 +1,6 @@
 package com.example.myapplication.activity.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import butterknife.BindView;
  * Created on 2020/9/8
  * 字母索引
  **/
+@SuppressLint("NonConstantResourceId")
 public class SideBarActivity extends BaseNewActivity {
 
     @BindView(R.id.side_bar_recycle)

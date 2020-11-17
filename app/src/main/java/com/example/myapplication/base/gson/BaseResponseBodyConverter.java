@@ -1,7 +1,6 @@
 package com.example.myapplication.base.gson;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.example.myapplication.base.BaseException;
 import com.google.gson.Gson;

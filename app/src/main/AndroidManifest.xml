@@ -36,6 +36,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+
+
         <activity android:name=".activity.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,14 +59,13 @@
         <activity android:name=".activity.view.CarActivity" />
         <activity android:name=".activity.view.QQStepViewActivity" />
         <activity android:name=".activity.view.NewsActivity" />
-        <activity android:name=".activity.view.DaiLogActivity"/>
+        <activity android:name=".activity.view.DaiLogActivity" />
+        <activity android:name=".activity.view.EvenBusActivity"/>
         <!--orientation|keyboardHidden-->
         <activity
             android:name=".activity.view.ServiceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="sensor">
-
-        </activity>
+            android:screenOrientation="sensor"/>
         <activity android:name=".activity.view.PostJsonDemoActivity" />
 
         <meta-data

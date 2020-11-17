@@ -25,7 +25,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.myapplication.R;
 import com.example.myapplication.utils.ActivityManager;
 import com.example.myapplication.utils.CustomDialog;
-import com.example.myapplication.utils.HttpUtils;
 
 import java.lang.ref.WeakReference;
 

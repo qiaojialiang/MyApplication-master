@@ -1,11 +1,13 @@
 package com.example.myapplication.activity.view;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +16,11 @@ import com.example.myapplication.activity.presenter.MainContract;
 import com.example.myapplication.activity.presenter.MainPresenter;
 import com.example.myapplication.adapter.PriceAdapter;
 import com.example.myapplication.base.BaseMvpActivity;
+import com.example.myapplication.bean.EvenBean;
 import com.example.myapplication.bean.PriceBean;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +31,12 @@ import butterknife.BindView;
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.MainView, View.OnClickListener {
     @BindView(R.id.main_recycle)
     RecyclerView mRecycle;
-    private List<PriceBean> priceBeans = new ArrayList<>();
+    private List<String> priceBeans = new ArrayList<>();
     private PriceAdapter mAdapter;
 
     @Override
     public void onPriceSuccess(List<PriceBean> s) {
-        mAdapter.setNewData(s);
+       // mAdapter.setNewData(s);
     }
 
     @Override
@@ -51,6 +57,9 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     @SuppressLint("InflateParams")
     @Override
     protected void initView() {
+        for (int i = 0; i <5 ; i++) {
+            priceBeans.add("");
+        }
         mAdapter = new PriceAdapter(R.layout.item_price, priceBeans);
         View heardView = getLayoutInflater().inflate(R.layout.main_heard_view, null);
         View footView = getLayoutInflater().inflate(R.layout.main_foot_view, null);
@@ -66,6 +75,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         Button btn7 = footView.findViewById(R.id.btn7);
         Button btn8 = footView.findViewById(R.id.btn8);
         Button btn9 = footView.findViewById(R.id.btn9);
+        Button btn10 = footView.findViewById(R.id.btn10);
         btn7.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -75,14 +85,15 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         btn6.setOnClickListener(this);
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
+        btn10.setOnClickListener(this);
         mRecycle.setLayoutManager(new GridLayoutManager(this, 5));
         mRecycle.setAdapter(mAdapter);
     }
 
     @Override
     protected void getData() {
-        mPresenter.getMainDemo();
-        mPresenter.getCode("11783");
+//        mPresenter.getMainDemo();
+//        mPresenter.getCode("11783");
     }
 
     @Override
@@ -94,6 +105,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     public void onProgress(long totalSize, long downSize) {
 
     }
+
 
 
     @Override
@@ -133,6 +145,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             //dialog
             case R.id.btn9:
                 DaiLogActivity.start(MainActivity.this);
+                break;
+            //EvenBus
+            case R.id.btn10:
+                EventBus.getDefault().post(new EvenBean(1, "133"));
+                EvenBusActivity.start(MainActivity.this);
                 break;
 
         }

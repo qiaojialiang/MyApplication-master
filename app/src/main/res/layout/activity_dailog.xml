@@ -5,23 +5,55 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_show"
+        android:id="@+id/activity_dialog_btn_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="弹窗"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_dialog_btn_show" />
 
 
-     <TextView
-         android:id="@+id/text1"
-         android:layout_width="150dp"
-         android:layout_height="100dp"
-         app:layout_constraintLeft_toLeftOf="parent"
-         app:layout_constraintTop_toBottomOf="@id/btn_show"
-         android:gravity="center"
-         android:textColor="#000000"
-         android:textSize="22sp"
-         />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/activity_dialog_btn_show"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/activity_dialog_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="handler"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
+
+    <Button
+        android:id="@+id/activity_dialog_btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="handler1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_dialog_btn2" />
+
+    <Button
+        android:id="@+id/activity_dialog_btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_dialog_btn3"
+        android:text="冒泡"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
