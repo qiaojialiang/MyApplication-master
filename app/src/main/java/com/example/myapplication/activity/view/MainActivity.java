@@ -1,13 +1,12 @@
 package com.example.myapplication.activity.view;
 
 import android.annotation.SuppressLint;
-import android.os.Bundle;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,8 +18,11 @@ import com.example.myapplication.base.BaseMvpActivity;
 import com.example.myapplication.bean.EvenBean;
 import com.example.myapplication.bean.PriceBean;
 
+import com.example.myapplication.kt.view.Kt1;
+import com.example.myapplication.kt.view.Kt2;
+
+
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
 
     @Override
     public void onPriceSuccess(List<PriceBean> s) {
-       // mAdapter.setNewData(s);
+        // mAdapter.setNewData(s);
     }
 
     @Override
@@ -57,7 +59,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     @SuppressLint("InflateParams")
     @Override
     protected void initView() {
-        for (int i = 0; i <5 ; i++) {
+        for (int i = 0; i < 5; i++) {
             priceBeans.add("");
         }
         mAdapter = new PriceAdapter(R.layout.item_price, priceBeans);
@@ -76,6 +78,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         Button btn8 = footView.findViewById(R.id.btn8);
         Button btn9 = footView.findViewById(R.id.btn9);
         Button btn10 = footView.findViewById(R.id.btn10);
+        Button btn11 = footView.findViewById(R.id.btn11);
+        Button btn12 = footView.findViewById(R.id.btn12);
         btn7.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -86,6 +90,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
         btn10.setOnClickListener(this);
+        btn11.setOnClickListener(this);
+        btn12.setOnClickListener(this);
         mRecycle.setLayoutManager(new GridLayoutManager(this, 5));
         mRecycle.setAdapter(mAdapter);
     }
@@ -105,7 +111,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
     public void onProgress(long totalSize, long downSize) {
 
     }
-
 
 
     @Override
@@ -150,6 +155,16 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             case R.id.btn10:
                 EventBus.getDefault().post(new EvenBean(1, "133"));
                 EvenBusActivity.start(MainActivity.this);
+                break;
+            //ktdemo
+            case R.id.btn11:
+                Kt1.Companion.start(MainActivity.this);
+                // Intent intent= new Intent(MainActivity.this, Kt2.class);
+                // startActivity(intent);
+                break;
+            //ktdemo2
+            case R.id.btn12:
+                Kt2.Companion.start(MainActivity.this);
                 break;
 
         }

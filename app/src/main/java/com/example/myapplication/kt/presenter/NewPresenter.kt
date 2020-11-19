@@ -25,7 +25,8 @@ import com.example.myapplication.base.BasePresenter
 //        })
 //    }
 //}
-class NewPresenter(baseView: NewsContract.NewsDemoView) : BasePresenter<NewsContract.NewsDemoView>(baseView), NewsContract.NewsPresenter {
+class NewPresenter(baseView: NewsContract.NewsDemoView) : BasePresenter<NewsContract.NewsDemoView>(baseView),
+        NewsContract.NewsPresenter {
 
     override fun getNewsData() {
 

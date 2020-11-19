@@ -60,12 +60,14 @@
         <activity android:name=".activity.view.QQStepViewActivity" />
         <activity android:name=".activity.view.NewsActivity" />
         <activity android:name=".activity.view.DaiLogActivity" />
-        <activity android:name=".activity.view.EvenBusActivity"/>
+        <activity android:name=".activity.view.EvenBusActivity" />
+        <activity android:name=".kt.view.Kt1" />
+        <activity android:name=".kt.view.Kt2" />
         <!--orientation|keyboardHidden-->
         <activity
             android:name=".activity.view.ServiceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="sensor"/>
+            android:screenOrientation="sensor" />
         <activity android:name=".activity.view.PostJsonDemoActivity" />
 
         <meta-data

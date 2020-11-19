@@ -27,7 +27,6 @@ public class WeatherActivity extends BaseMvpActivity<WeatherPresenter>  implemen
     private WeatherAdapter mAdapter;
     private List<WeatherBean.PositionBean> positionBeans=new ArrayList<>();
 
-
     public static void start(Context context) {
         Intent intent =new Intent(context,WeatherActivity.class);
         context.startActivity(intent);
