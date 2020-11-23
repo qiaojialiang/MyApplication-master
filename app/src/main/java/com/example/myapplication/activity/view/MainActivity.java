@@ -20,6 +20,7 @@ import com.example.myapplication.bean.PriceBean;
 
 import com.example.myapplication.kt.view.Kt1;
 import com.example.myapplication.kt.view.Kt2;
+import com.example.myapplication.kt.view.TianqiActivity;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -80,6 +81,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         Button btn10 = footView.findViewById(R.id.btn10);
         Button btn11 = footView.findViewById(R.id.btn11);
         Button btn12 = footView.findViewById(R.id.btn12);
+        Button btn13 = footView.findViewById(R.id.btn13);
         btn7.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -92,6 +94,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
         btn12.setOnClickListener(this);
+        btn13.setOnClickListener(this);
         mRecycle.setLayoutManager(new GridLayoutManager(this, 5));
         mRecycle.setAdapter(mAdapter);
     }
@@ -165,6 +168,10 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             //ktdemo2
             case R.id.btn12:
                 Kt2.Companion.start(MainActivity.this);
+                break;
+            //kt天气
+            case R.id.btn13:
+                TianqiActivity.start(MainActivity.this);
                 break;
 
         }

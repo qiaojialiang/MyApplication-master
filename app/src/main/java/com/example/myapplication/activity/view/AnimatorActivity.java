@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseNewActivity;
+import com.example.myapplication.bean.WeatherBean;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -77,7 +78,7 @@ public class AnimatorActivity extends BaseNewActivity {
     @Override
     protected void initView() {
 
-
+        WeatherBean weatherBean;
 
 
     }

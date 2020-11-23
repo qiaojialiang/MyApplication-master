@@ -46,7 +46,6 @@
         </activity>
         <activity android:name=".activity.view.GetPostDemoActivity" />
         <activity android:name=".kt.view.KtDemoActivity" />
-        <activity android:name=".kt.view.NewsActivity" />
         <activity android:name=".kt.view.JspActivity" />
         <activity android:name=".activity.view.DemoActivity" />
         <activity android:name=".activity.view.TabLayoutActivity" />
@@ -61,6 +60,7 @@
         <activity android:name=".activity.view.NewsActivity" />
         <activity android:name=".activity.view.DaiLogActivity" />
         <activity android:name=".activity.view.EvenBusActivity" />
+        <activity android:name=".kt.view.TianqiActivity"/>
         <activity android:name=".kt.view.Kt1" />
         <activity android:name=".kt.view.Kt2" />
         <!--orientation|keyboardHidden-->

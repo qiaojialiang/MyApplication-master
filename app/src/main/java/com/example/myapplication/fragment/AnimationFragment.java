@@ -7,6 +7,9 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
 
@@ -44,6 +47,5 @@ public class AnimationFragment extends BaseFragment {
 
     @Override
     protected void initData(Context mContext) {
-
     }
 }
