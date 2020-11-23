@@ -1,11 +1,7 @@
 package com.example.myapplication.activity.presenter;
 
 
-import com.example.myapplication.base.BaseObserver;
 import com.example.myapplication.base.BasePresenter;
-import com.example.myapplication.bean.VideoBean;
-
-import java.util.List;
 
 
 /**
@@ -20,8 +16,6 @@ public class TanTanPresenter extends BasePresenter<TanTanContract.TanTanView> im
 
     @Override
     public void getImage(String uid, int p) {
-
-
 //        addDisposable(apiServer.getVideo(uid, p), new BaseObserver<List<VideoBean>>(baseView) {
 //
 //

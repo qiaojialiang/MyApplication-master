@@ -1,5 +1,6 @@
 package com.example.myapplication.kt.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -14,6 +15,7 @@ import com.example.myapplication.adapter.MyPagerAdapter
  * Created by QiaoJiaLiang
  * Created on 2020/9/2
  **/
+@SuppressLint("NonConstantResourceId")
 class JspActivity : BaseKtActivity() {
     @BindView(R.id.xTablayout)
     lateinit var mTabLayout: XTabLayout

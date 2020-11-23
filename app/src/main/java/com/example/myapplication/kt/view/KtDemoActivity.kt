@@ -38,7 +38,6 @@ class KtDemoActivity : BaseKtActivity(), View.OnClickListener {
     }
 
     companion object {
-        val BASE_SERVER_URL = "http://dsx66.me/api/public/"
 
         fun start(context: Context) {
             val intent = Intent(context, KtDemoActivity::class.java)
