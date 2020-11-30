@@ -48,8 +48,6 @@ public class PostJsonDemoActivity extends BaseActivity {
         mRecycle.setLayoutManager(new LinearLayoutManager(this));
         mRecycle.setAdapter(weatherAdapterNew);
         getUtils();
-
-
     }
 
     private void getWeather() {
@@ -63,7 +61,7 @@ public class PostJsonDemoActivity extends BaseActivity {
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NotNull Call call, Response response) throws IOException {
                 JSONObject jsonObject = JSON.parseObject(response.body().string());
                 String result = jsonObject.getString("result");
                 JSONObject jsonObject1 = JSON.parseObject(result);
@@ -109,7 +107,6 @@ public class PostJsonDemoActivity extends BaseActivity {
             }
         });
     }
-
 
     private void getUtils() {
         FormBody.Builder formBody = new FormBody.Builder();

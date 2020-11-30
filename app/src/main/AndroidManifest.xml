@@ -4,7 +4,6 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -39,10 +38,7 @@
 
 
         <activity android:name=".activity.view.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".activity.view.GetPostDemoActivity" />
         <activity android:name=".kt.view.KtDemoActivity" />
@@ -63,7 +59,13 @@
         <activity android:name=".kt.view.TianqiActivity"/>
         <activity android:name=".kt.view.Kt1" />
         <activity android:name=".kt.view.Kt2" />
-        <!--orientation|keyboardHidden-->
+        <activity android:name=".activity.view.GoWebView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.view.MyWebWiewActivity"/>
         <activity
             android:name=".activity.view.ServiceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

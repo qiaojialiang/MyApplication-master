@@ -162,8 +162,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             //ktdemo
             case R.id.btn11:
                 Kt1.Companion.start(MainActivity.this);
-                // Intent intent= new Intent(MainActivity.this, Kt2.class);
-                // startActivity(intent);
                 break;
             //ktdemo2
             case R.id.btn12:

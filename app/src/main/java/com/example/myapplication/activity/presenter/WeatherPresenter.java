@@ -6,7 +6,6 @@ import com.example.myapplication.base.BaseObserver;
 import com.example.myapplication.base.BasePresenter;
 import com.example.myapplication.bean.WeatherBean;
 
-import java.util.List;
 
 public class WeatherPresenter extends BasePresenter<WeatherContract.WeatherView>implements  WeatherContract.WeatherPresenter{
 

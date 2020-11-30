@@ -5,8 +5,6 @@ import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -14,7 +12,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseNewActivity;
@@ -142,4 +139,6 @@ public class AnimatorActivity extends BaseNewActivity {
         // objectAnimator.start();
 
     }
+
+
 }

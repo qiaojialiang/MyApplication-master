@@ -17,6 +17,5 @@ public class WeatherAdapterNew  extends BaseQuickAdapter<WeatherListBean, BaseVi
     @Override
     protected void convert(BaseViewHolder helper, WeatherListBean item) {
         helper.setText(R.id.textView,item.getDetail()+"");
-
     }
 }

@@ -42,7 +42,6 @@ public class QQStepViewActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 valueAnimator.start();
-
             }
         });
 
