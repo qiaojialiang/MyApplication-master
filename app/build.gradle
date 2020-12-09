@@ -57,30 +57,30 @@ android {
     // 比如你现在一共软件需要发布到不同渠道，
     // 且不同渠道中的包名不同，那么可以在此进行配置；
     // 甚至可以设置不同的 AndroidManifest.xml 文件。
-    productFlavors {
-        baidu {
-
-        }
-        xiaomi {
-
-        }
-        qihu360 {
-
-        }
-        yingyongbao {
-
-        }
-        huawei {
-
-        }
-    }
-    //这个标识将productFlavors中的名字赋值给UMENG_CHANNEL_VALUE也就是xiaomi{}会赋值xiaomi给UMENG_CHANNEL_VALUE；
-    productFlavors.all {
-        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL: name]
-    }
-    defaultConfig {
-        manifestPlaceholders = [channel: name]
-    }
+//    productFlavors {
+//        baidu {
+//
+//        }
+//        xiaomi {
+//
+//        }
+//        qihu360 {
+//
+//        }
+//        yingyongbao {
+//
+//        }
+//        huawei {
+//
+//        }
+//    }
+//    //这个标识将productFlavors中的名字赋值给UMENG_CHANNEL_VALUE也就是xiaomi{}会赋值xiaomi给UMENG_CHANNEL_VALUE；
+//    productFlavors.all {
+//        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL: name]
+//    }
+//    defaultConfig {
+//        manifestPlaceholders = [channel: name]
+//    }
     //封装此项目的所有构建类型配置
     buildTypes {
         release {
@@ -151,22 +151,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    applicationVariants.all { variant ->
-        variant.outputs.all {
-            outputFileName = "driver_${variant.productFlavors[0].name}_v${variant.versionName}.apk"
-        }
-    }
-    greendao {
-        // 指定数据库schema版本号，迁移等操作会用到
-        schemaVersion 1
-            // 设置生成数据库文件的目录，默认是在build中，可以将生成的文件放到我们的java目录中
-        targetGenDir 'src/main/java'
-        // 设置生成的数据库相关文件的包名，默认为entity所在的包名
-        daoPackage 'com.example.greendao.gen'
-    }
-    dataBinding {
-        enabled = true
-    }
+//    applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            outputFileName = "driver_${variant.productFlavors[0].name}_v${variant.versionName}.apk"
+//        }
+//    }
+//    greendao {
+//        // 指定数据库schema版本号，迁移等操作会用到
+//        schemaVersion 1
+//            // 设置生成数据库文件的目录，默认是在build中，可以将生成的文件放到我们的java目录中
+//        targetGenDir 'src/main/java'
+//        // 设置生成的数据库相关文件的包名，默认为entity所在的包名
+//        daoPackage 'com.example.greendao.gen'
+//    }
+
+    //mvvm
+//    dataBinding {
+//        enabled = true
+//    }
 }
 
 
@@ -213,6 +215,10 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.1.60.android'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.lzy.net:okgo:2.1.4'
+
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'junit:junit:4.12'
+    //dialog 弹窗
 }
 //使用maven仓库，android有两个标准的library文件服务器，一个jcenter一个maven,两者毫无关系
 //jcenter有的maven可能没有，反之亦然
