@@ -218,7 +218,18 @@ dependencies {
 
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'junit:junit:4.12'
+    //权限管理
+    implementation 'com.yanzhenjie:permission:2.0.0-rc12'
+    //文件选择
+    implementation 'cn.finalteam.rxgalleryfinal:library:1.1.3'
+
+    implementation 'com.just.agentweb:agentweb:4.1.4' // (必选)
+    implementation 'com.just.agentweb:filechooser:4.1.4'// (可选)
+    implementation 'com.download.library:Downloader:4.1.4'// (可选)
     //dialog 弹窗
+    implementation 'com.github.maning0303:MNUpdateAPK:V2.0.3'
+    implementation project(path: ':SweetDialog')
+   
 }
 //使用maven仓库，android有两个标准的library文件服务器，一个jcenter一个maven,两者毫无关系
 //jcenter有的maven可能没有，反之亦然

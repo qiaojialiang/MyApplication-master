@@ -137,7 +137,6 @@ public class DaiLogActivity extends BaseNewActivity {
             }
         }
         for (int number : numbers) {
-            Log.e("数据1", number + "");
         }
     }
 

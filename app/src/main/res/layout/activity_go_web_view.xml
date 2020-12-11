@@ -15,13 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
+            <EditText
                 android:id="@+id/text_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:text=" "
                 android:textColor="#000000"
+                android:background="@null"
                 android:textSize="18sp" />
         </ScrollView>
 
@@ -35,8 +36,7 @@
         android:layout_height="3dp"
         android:layout_below="@id/line1"
         android:progressDrawable="@drawable/pg"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -48,15 +48,15 @@
             android:id="@+id/prompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/editText"
+            android:layout_above="@id/line_edit_text"
             android:layout_marginStart="25dp"
             android:padding="6dp"
             android:text="请输入网址"
             android:textSize="20sp" />
 
 
-        <EditText
-            android:id="@+id/editText"
+        <LinearLayout
+            android:id="@+id/line_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
@@ -64,7 +64,26 @@
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/edittext_shape"
-            android:singleLine="true" />
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:singleLine="true" />
+
+            <ImageView
+               android:id="@+id/search"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:src="@drawable/go" />
+
+        </LinearLayout>
 
         <WebView
             android:id="@+id/web_view"
@@ -105,12 +124,6 @@
             android:layout_weight="1"
             android:src="@drawable/web_refresh" />
 
-        <ImageView
-            android:id="@+id/btn_go"
-            android:layout_width="15dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:src="@drawable/search" />
 
     </LinearLayout>
 
